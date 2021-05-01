@@ -14,9 +14,9 @@ import AddPlacePopup from './AddPlacePopup.js'
 
 
 function App() {
-  const [EditProfilePopupOpen, isEditProfilePopupOpen] = React.useState(false);
-  const [EditAvatarPopupOpen, isEditAvatarPopupOpen] = React.useState(false);
-  const [AddPlacePopupOpen, isAddPlacePopupOpen] = React.useState(false);
+  const [editProfilePopupOpen, isEditProfilePopupOpen] = React.useState(false);
+  const [editAvatarPopupOpen, isEditAvatarPopupOpen] = React.useState(false);
+  const [addPlacePopupOpen, isAddPlacePopupOpen] = React.useState(false);
   const [selectCard, selectedCard] = React.useState(null);
   const [currentUser, setCurrentUser] = React.useState({});
   const [cards, setCards] = React.useState(null);
@@ -25,7 +25,6 @@ function App() {
     api.getInitialCards()
       .then((result) => {
         setCards(result)
-        cards.forEach((itm) => { console.log(itm) })
       }).catch((err) => {
         console.log(err); // выведем ошибку в консоль
       });
@@ -139,9 +138,9 @@ function App() {
 
           />
           <Footer />
-          <EditProfilePopup isOpen={EditProfilePopupOpen ? true : false} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
-          <EditAvatarPopup isOpen={EditAvatarPopupOpen ? true : false} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
-          <AddPlacePopup isOpen={AddPlacePopupOpen ? true : false} onClose={closeAllPopups} onAddPlace={handleAddPlaceSubmit} />
+          <EditProfilePopup isOpen={editProfilePopupOpen ? true : false} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
+          <EditAvatarPopup isOpen={editAvatarPopupOpen ? true : false} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
+          <AddPlacePopup isOpen={addPlacePopupOpen ? true : false} onClose={closeAllPopups} onAddPlace={handleAddPlaceSubmit} />
           <PopupWithForm name='Confirm' title='Вы уверены?' buttonTitle='Да' onClose={closeAllPopups} />
           <ImagePopup card={selectCard} onClose={closeAllPopups} />
         </div>
