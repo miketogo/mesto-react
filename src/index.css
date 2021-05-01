@@ -42,3 +42,5 @@
 @import url(blocks/element/__like-coutner/element__like-coutner.css);
 @import url(blocks/profile/__avatar-edit/profile__avatar-edit.css);
 @import url(blocks/profile/__avatar-container/profile__avatar-container.css);
+@import url(blocks/element/__trash/_type/element__trash_type_hidden.css);
+@import url(blocks/element/__trash/_type/element__trash_type_visible.css);
