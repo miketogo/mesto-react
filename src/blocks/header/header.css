@@ -1,4 +1,6 @@
 .header{
+  font-family: Inter;
+  justify-content: space-between;
   padding-bottom: 41px;
   display: flex;
   max-width: calc(100% - 200px * 2);
